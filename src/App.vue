@@ -16,11 +16,17 @@ export default {
     AppMain,
   },
   created() {
+    store.isPageLoading = true;
     axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0")
+      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0")
       .then((response) => {
         store.cards = response.data.data;
         console.log(store.cards);
+      })
+      .finally(() => {
+        setTimeout(() => {
+          store.isPageLoading = false;
+        }, 1000);
       });
   },
 };

@@ -12,10 +12,10 @@ export default {
 
 <template>
   <div
-    class="col"
+    class="col mb-4"
     v-for="card in store.cards"
   >
-    <div class="card mb-4">
+    <div class="card pb-2">
       <div v-for="img in card.card_images">
         <img
           :src="img.image_url"
@@ -36,15 +36,13 @@ export default {
   text-align: center;
   background-color: $bg-color;
   display: flex;
-  gap: 1rem;
   height: 100%;
 
-  img {
-  }
   .name {
     color: white;
-    font-weight: 500;
+    font-weight: bold;
     padding: 1rem;
+    text-transform: uppercase;
   }
   .archetype {
   }

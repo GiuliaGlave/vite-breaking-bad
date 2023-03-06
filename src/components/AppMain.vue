@@ -10,7 +10,11 @@ export default {
 
 <template>
   <section>
-    <div class="container">alien</div>
+    <div class="container">
+      <select>
+        <span>ss</span>
+      </select>
+    </div>
     <div class="container">
       <CardsList />
     </div>
