@@ -1,47 +1,25 @@
 <script>
-import axios from "axios";
 import Card from "./Card.vue";
+import { store } from "../data/store";
 
 export default {
   data() {
     return {
-      cards: [],
+      store,
     };
   },
   components: {
     Card,
   },
-  created() {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0")
-      .then((response) => {
-        console.log(response); //in console guardo il percoso per accedere all'array con i dati che mi servono
-        this.cards = response.data.data; //riscrivo il percorso
-        console.log(this.cards);
-      });
-  },
 };
 </script>
 
 <template>
-  <Card />
-
   <div class="deck-container">
     <div class="n-results">found</div>
-    <div class="deck row row-cols-5">
-      <div
-        v-for="card in cards"
-        class="card col"
-      >
-        <div v-for="img in card.card_images">
-          <img
-            :src="img.image_url"
-            alt=""
-          />
-        </div>
-        <div class="name">{{ card.name }}</div>
-        <div class="archetype">{{ card.archetype }}</div>
-      </div>
+
+    <div class="row row-cols-5 m-0">
+      <Card />
     </div>
   </div>
 </template>
@@ -55,27 +33,9 @@ export default {
 
   .n-results {
     background-color: $dark-color;
+    font-weight: bold;
     color: white;
     padding: 2rem;
-  }
-  .deck {
-    padding: 0;
-    .card {
-      text-align: center;
-      background-color: $bg-color;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-      img {
-        width: 100%;
-      }
-      .name {
-        color: white;
-        font-weight: 500;
-      }
-      .archetype {
-      }
-    }
   }
 }
 </style>
