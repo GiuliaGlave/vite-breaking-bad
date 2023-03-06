@@ -3,19 +3,11 @@
 
 export default {
   data() {
-    return {
-      title: "Hello world",
-    };
+    return {};
   },
-
-  // components: {
-  //   MyComponent,
-  // },
 };
 </script>
 
-<template>
-  <h1>{{ title }}</h1>
-</template>
+<template></template>
 
 <style lang="scss" scoped></style>

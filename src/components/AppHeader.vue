@@ -1,17 +1,28 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
 export default {
   data() {
     return {};
   },
-
-  // components: {
-  //   MyComponent,
-  // },
 };
 </script>
 
-<template>ciao</template>
+<template>
+  <header>
+    <div>
+      <img
+        src=""
+        alt=""
+      />
+      logo
+    </div>
+    <div>Yu-Gi-Oh Api</div>
+  </header>
+</template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+}
+</style>

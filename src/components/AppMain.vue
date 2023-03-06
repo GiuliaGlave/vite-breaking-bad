@@ -10,8 +10,16 @@ export default {
 
 <template>
   <section>
-    <CardsList />
+    <div class="container">alien</div>
+    <div class="container">
+      <CardsList />
+    </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../assets/styles.scss/variables.scss" as *;
+section {
+  background-color: $bg-color;
+}
+</style>
