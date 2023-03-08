@@ -21,7 +21,6 @@ export default {
       .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0")
       .then((response) => {
         store.cards = response.data.data;
-        console.log(store.cards);
       })
       .finally(() => {
         setTimeout(() => {
@@ -29,12 +28,18 @@ export default {
         }, 1000);
       });
   },
+  methods: {
+    fetchCardType(type) {
+      this.$emit("select-card-type");
+    },
+  },
 };
+/* `https://db.ygoprodeck.com/api/v7/cardinfo.php?type=${type}&num=15&offset=0` */
 </script>
 
 <template>
   <AppHeader />
-  <AppMain />
+  <AppMain @select-card-type="fetchCardType" />
 </template>
 
 <style lang="scss"></style>
